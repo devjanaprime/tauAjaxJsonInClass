@@ -26,4 +26,21 @@ $( document ).ready( function(){
     // set outputDiv's text to outputText
     $( '#outputDiv' ).html( outputText );
   }); // end on click for addCar
+
+  var getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth = function(){
+    console.log( 'in getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth' );
+    // make an ajax call to a url
+    $.ajax({
+      url: 'http://devjana.net/support/cars.json',
+      dataType: 'JSON',
+      success: function( data ){
+        console.log( 'success, received:', data );
+        console.log( 'data.cars:', data.cars );
+      }
+    });
+    // receive some data
+    // display data
+  }; // end getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth
+
+  getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth();
 }); // end doc ready
