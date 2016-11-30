@@ -10,6 +10,7 @@ tech
 * javascript
 * JQuery (Ajax)
 * JSON
+* requires this "on" in Chrome: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 
 car object
 ----------
