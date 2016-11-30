@@ -15,6 +15,9 @@ $( document ).ready( function(){
     // push car into garage array
     garage.push( newCar) ;
     // display garage
+    displayOnDom();
+  }); // end on click for addCar
+  var displayOnDom = function(){
     console.log( 'garage:', garage );
     // loop through cars and update outputText
     var outputText = '';
@@ -25,7 +28,7 @@ $( document ).ready( function(){
     }
     // set outputDiv's text to outputText
     $( '#outputDiv' ).html( outputText );
-  }); // end on click for addCar
+  }; // end displayOnDom
 
   var getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth = function(){
     console.log( 'in getCarsFromWebJsonPlaceSomewhereOutThereIsTheTruth' );
@@ -36,6 +39,12 @@ $( document ).ready( function(){
       success: function( data ){
         console.log( 'success, received:', data );
         console.log( 'data.cars:', data.cars );
+        // loop through data.cars
+        for (var i = 0; i < data.cars.length; i++) {
+          // push each car into the garage
+          garage.push( data.cars[i] );
+        }// end for
+        displayOnDom();
       }
     });
     // receive some data
